@@ -1,1 +1,1 @@
-export const environment = {urlAPI: 'https://localhost:7127/api/'};
+export const environment = {urlAPI: 'https://localhost:7044/api/'};
