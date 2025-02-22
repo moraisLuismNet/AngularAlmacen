@@ -13,58 +13,58 @@ export class AlmacenService {
   constructor(private http: HttpClient, private authGuard: AuthGuard) {}
 
   getCategorias(): Observable<ICategoria[]> {
-    const headers = this.getHeaders();
-    return this.http.get<ICategoria[]>(`${this.urlAPI}categorias`, { headers });
+    return this.http.get<ICategoria[]>(`${this.urlAPI}categorias`, { headers: this.getHeaders() });
   }
 
   addCategoria(categoria: ICategoria): Observable<ICategoria> {
-    const headers = this.getHeaders();
-    return this.http.post<ICategoria>(`${this.urlAPI}categorias`, categoria, { headers });
+    return this.http.post<ICategoria>(`${this.urlAPI}categorias`, categoria, { headers: this.getHeaders() });
   }
 
   updateCategoria(categoria: ICategoria): Observable<ICategoria> {
-    const headers = this.getHeaders();
-    return this.http.put<ICategoria>(`${this.urlAPI}categorias/${categoria.idCategoria}`, categoria, {
-      headers
-    });
+    return this.http.put<ICategoria>(`${this.urlAPI}categorias/${categoria.idCategoria}`, categoria, { headers: this.getHeaders() });
   }
 
   deleteCategoria(id: number): Observable<ICategoria> {
-    const headers = this.getHeaders();
-    return this.http.delete<ICategoria>(`${this.urlAPI}categorias/${id}`, {
-      headers
-    });
+    return this.http.delete<ICategoria>(`${this.urlAPI}categorias/${id}`, { headers: this.getHeaders() });
   }
 
-  getHeaders(): HttpHeaders {
+  private getHeaders(): HttpHeaders {
     const token = this.authGuard.getToken();
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`
-    });
-    return headers;
+    return new HttpHeaders({ Authorization: `Bearer ${token}` });
   }
 
   getProductos(): Observable<IProducto[]> {
-    const headers = this.getHeaders();
-    return this.http.get<IProducto[]>(`${this.urlAPI}Productos`, { headers });
+    return this.http.get<IProducto[]>(`${this.urlAPI}productos`, { headers: this.getHeaders() });
   }
 
   addProducto(producto: IProducto): Observable<IProducto> {
-    const headers = this.getHeaders();
     const formData = new FormData();
-    formData.append('nombre', producto.nombreProducto);
+    formData.append('nombreProducto', producto.nombreProducto);
     formData.append('precio', producto.precio.toString());
-    formData.append('categoria', producto.categoriaId?.toString()!);
+    formData.append('categoriaId', producto.categoriaId?.toString() || '');
     formData.append('descatalogado', producto.descatalogado ? 'true' : 'false');
-    formData.append('foto', producto.foto!);
+    if (producto.foto) {
+      formData.append('foto', producto.foto);
+    }
 
-    return this.http.post<IProducto>(`${this.urlAPI}Productos`, formData, { headers });
+    return this.http.post<IProducto>(`${this.urlAPI}productos`, formData, { headers: this.getHeaders() });
+  }
+
+  updateProducto(producto: IProducto): Observable<IProducto> {
+    const formData = new FormData();
+    formData.append('idProducto', producto.idProducto.toString());
+    formData.append('nombreProducto', producto.nombreProducto);
+    formData.append('precio', producto.precio.toString());
+    formData.append('categoriaId', producto.categoriaId?.toString() || '');
+    formData.append('descatalogado', producto.descatalogado ? 'true' : 'false');
+    if (producto.foto) {
+      formData.append('foto', producto.foto);
+    }
+
+    return this.http.put<IProducto>(`${this.urlAPI}productos/${producto.idProducto}`, formData, { headers: this.getHeaders() });
   }
 
   deleteProducto(id: number): Observable<IProducto> {
-    const headers = this.getHeaders();
-    return this.http.delete<IProducto>(`${this.urlAPI}Productos/${id}`, {
-      headers
-    });
+    return this.http.delete<IProducto>(`${this.urlAPI}productos/${id}`, { headers: this.getHeaders() });
   }
 }

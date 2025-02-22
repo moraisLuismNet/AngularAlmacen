@@ -1,7 +1,7 @@
 export interface ICategoria{
   idCategoria?: number;
   nombreCategoria: string;
-  //totalProductos?: number
+  totalProductos?: number
 }
 
 export interface IProducto {
@@ -11,6 +11,7 @@ export interface IProducto {
   descatalogado: boolean;
   foto?: File | null;
   fotoUrl?: string;
+  fotoNombre?: string | null;
   categoriaId: number | null;
   nombreCategoria: string;
 }
