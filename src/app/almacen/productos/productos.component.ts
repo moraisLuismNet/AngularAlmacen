@@ -123,7 +123,7 @@ export class ProductosComponent implements OnInit {
       message: `Eliminar el producto ${producto.nombreProducto}?`,
       header: 'Estás seguro?',
       icon: 'pi pi-exclamation-triangle',
-      acceptLabel: 'Sí´',
+      acceptLabel: 'Sí',
       acceptButtonStyleClass: 'p-button-danger',
       accept: () => this.deleteProducto(producto.idProducto)
     });
@@ -151,7 +151,7 @@ export class ProductosComponent implements OnInit {
   }
 
   extraerNombreImagen(url: string): string {
-    return url.split('/').pop() || ''; 
+    return url.split('/').pop() || '';
   }
 
   cancelarEdicion() {

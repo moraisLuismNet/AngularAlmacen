@@ -17,7 +17,6 @@ import { InicioModule } from './inicio/inicio.module';
     BrowserModule,
     AppRoutingModule,BrowserAnimationsModule, HttpClientModule,InicioModule,FormsModule
   ],
-  // providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

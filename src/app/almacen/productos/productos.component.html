@@ -4,20 +4,20 @@
       <h1>Agregar producto</h1>
       <form #formulario="ngForm" (submit)="guardar()">
         <div class="form-group">
-          <label for="descripcion">Nombre</label>
+          <label for="nombre">Nombre</label>
           <input
             type="text"
             class="form-control"
-            name="descripcion"
+            name="nombre"
             [(ngModel)]="producto.nombreProducto"
             required
-            id="descripcion"
-            #descripcion="ngModel"
+            id="nombre"
+            #nombre="ngModel"
             placeholder="Nombre obligatoria"
           />
           <span
             class="form-text text-danger"
-            *ngIf="!descripcion.valid && descripcion.touched"
+            *ngIf="!nombre.valid && nombre.touched"
           >
             Nombre obligatorio
           </span>

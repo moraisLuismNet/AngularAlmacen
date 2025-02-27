@@ -49,9 +49,8 @@ export class CategoriasComponent implements OnInit {
           this.getCategorias();
         },
         error: (err) => {
-          // console.log(err);
-          // this.visibleError = true;
-          // this.mensajeError = 'Se ha producido un error';
+          console.log(err);
+          this.visibleError = true;
           this.controlarError(err);
         }
       });
@@ -64,8 +63,7 @@ export class CategoriasComponent implements OnInit {
           this.getCategorias();
         },
         error: (err) => {
-          // this.visibleError = true;
-          //   this.mensajeError = 'Se ha producido un error';
+          this.visibleError = true;
           this.controlarError(err);
         }
       });

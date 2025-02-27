@@ -1,8 +1,15 @@
-## Almacen
+## AngularAlmacen
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
 ![AngularAlmacen](img/1.png)
 ![AngularAlmacen](img/2.png)
+
+
+## environment
+
+```
+export const environment = {urlAPI: 'https://localhost:7044/api/'};
+```
 
 ## Development server
 

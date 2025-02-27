@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { ILogin, ILoginResponse } from 'src/app/interfaces/login.interface';
+import { ILogin} from 'src/app/interfaces/login.interface';
 import { AppService } from 'src/app/services/app.service';
 import { AuthGuard } from 'src/app/guards/auth-guard.service';
 
