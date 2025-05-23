@@ -5,6 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![AngularAlmacen](img/2.png)
 
 
+[DeepWiki moraisLuismNet/AngularAlmacen](https://deepwiki.com/moraisLuismNet/AngularAlmacen)
+
+
 ## environment
 
 ```
