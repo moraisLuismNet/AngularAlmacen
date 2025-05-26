@@ -1,5 +1,54 @@
 ## AngularAlmacen
+
+**AngularAlmacen** is a web application developed with Angular. Its main function is to manage a warehouse, allowing for the administration of categories and products.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+
+![AngularAlmacen](img/UML.png)
+
+AngularAlmacen/  
+├───app/  
+│   ├───almacen/  
+│   │   ├───categorias/  
+│   │   │   ├───categorias.component.html  
+│   │   │   └───categorias.component.ts  
+│   │   ├───productos/  
+│   │   │   ├───productos.component.html  
+│   │   │   └───productos.component.ts  
+│   │   ├───almacen-routing.module.ts  
+│   │   ├───almacen.component.html  
+│   │   ├───almacen.component.ts  
+│   │   ├───almacen.interfaces.ts  
+│   │   └───almacen.module.ts  
+│   ├───guards/  
+│   │   └───auth-guard.service.ts  
+│   ├───inicio/  
+│   │   ├───login/  
+│   │   │   ├───login.component.css  
+│   │   │   ├───login.component.html  
+│   │   │   └───login.component.ts  
+│   │   ├───not-found/  
+│   │   │   ├───not-found.component.css  
+│   │   │   ├───not-found.component.html  
+│   │   │   └───not-found.component.ts  
+│   │   └───inicio.module.ts  
+│   ├───interfaces/  
+│   │   └───login.interfaces.ts  
+│   ├───services/  
+│   │   └───app.service.ts  
+│   ├───shared/  
+│   │   ├───navbar/  
+│   │   │   ├───navbar.component.html  
+│   │   │   └───navbar.component.ts  
+│   │   └───shared.module.ts  
+│   ├───app-routing.module.ts  
+│   ├───app.component.html  
+│   ├───app.component.ts  
+│   └───app.module.ts  
+├───environments/  
+│   ├───environment.development.ts  
+│   └───environment.ts  
+└───angular.json  
+
 
 ![AngularAlmacen](img/1.png)
 ![AngularAlmacen](img/2.png)
